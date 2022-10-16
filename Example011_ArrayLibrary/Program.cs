@@ -21,8 +21,33 @@ void PrintArray(int[] col)     //метод печати массива на э�
     }
 }
 
+int IndexOf(int[] collection, int find)
+{
+    int count = collection.Length;
+    int index = 0;
+    int position = 0;
+
+    while (index < count)
+    {
+        if(collection[index] == find)
+        {
+            position = index;
+            break;
+        }
+        index++;
+    }
+    return position;
+}
+
+
 
 int[] array = new int[10];    //создать новый массив в котором будет 10 элементов (по умолчанию будет заполнен нулями, чтобы заполнить другими числами нужно воспользоваться методом выше)
 
 FillArray(array);
+array[4]=4;   //искуственно добавили 4 в массив и ниже тоже
+array[6]=4;
 PrintArray(array);
+Console.WriteLine();
+
+int pos = IndexOf(array,4);
+Console.WriteLine(pos);
